@@ -1,0 +1,16 @@
+#Set working directory
+setwd("INSERT DIRECTORY HERE")
+
+#Load data sets
+hh <- read.csv("1_Household_Public.csv")
+per <- read.csv("2_Person_Public.csv")
+veh <- read.csv("3_Vehicle_Public.csv")
+trip <- read.csv("4_Trip_Public.csv")
+
+#Question 1
+  sort(unique(hh$HH_ID))[sample(11:20, 1)]
+  #Random household = 101113
+  
+#Question 2
+  #Creates table with tour, location, activity, and activity duration info
+  subset(trip[c(2,3,15,18,28:35)], HH_ID == 101113)
