@@ -41,6 +41,7 @@ subset(trip[c(2,3,15,18,28:35)], HH_ID == 101113)
 ### Provide an estimate of the total number of bicycle trips represented by the survey data. Note that you should use the Person Weight to make this estimate. This number represents the total number of people each person in the survey is supposed to represent. For example, if a person’s Person Weight is 65, then that person represents 65 people in the Philadelphia region.
 
 ```{r}
+
 trip <- merge(trip, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
 
 <<<<<<< HEAD
@@ -57,9 +58,13 @@ round(summaryBy(P_WEIGHT ~ MODE_AGG , data =subset(trip, H_COUNTY == 42101),
 round(summaryBy(P_WEIGHT ~ MODE_AGG , data =subset(trip,H_COUNTY == 42101), 
                 FUN = sum) / sum(trip$P_WEIGHT[is.na(trip$MODE_AGG)==F & trip$H_COUNTY == 42101]),3) 
 
+#how do we get the people weight and bike trips to interact in a way that makes sense? Just multiplying sum of person weight of bike by number of bike trips gives >77 million
 
 ### Amount of People who bike
-sum(trip$P_WEIGHT[trip$MODE_AGG=='2'],na.rm=T)*sum(trip$MODE_AGG=='2',na.rm=T)
+sum(trip$P_WEIGHT[trip$MODE_AGG=='2'],na.rm=T)
+
+### Number of bike trips
+sum(trip$MODE_AGG=='2',na.rm=T)
 
 ##updated #3 LMK
 round(table(trip$MODE_AGG[trip$P_WEIGHT])/length(trip$MODE_AGG[trip$P_WEIGHT]), 3)
@@ -80,15 +85,24 @@ table(trip$MODE_AGG[hh$H_COUNTY == 34005])/sum(table(trip$MODE_AGG[hh$H_COUNTY =
 ### Make a graphic that shows the relationship between household income and the age of a household’s vehicle for all households. (Hint: merge the household data to the vehicle data with the merge() command. Use an internet search or type ?merge into the console to learn how to use the command.)
 
 ```{r}
+#Tried bar chart, but having a "height error". Is this the right chart to show this info?
 hhveh <- merge(veh, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
+<<<<<<< HEAD
 library(ggplot2)
 
+=======
+year.income <- (subset( hhveh, YEAR<2025 & INCOME < 11))
+plot(subset( hhveh, YEAR<2025 & INCOME < 11, select = c(INCOME,YEAR)))
+>>>>>>> f91a670faab42c2b6aedc986baa03f9a50d8431c
 ```
 
 ## Question 6 
 ### Make a table or graphic that shows the relationship between household income and mode choice for all households. (The boxplot() command is a nice option, but a table is just fine.) Again, you must choose how to combine modes.
 
 ```{r}
+#Average household income by mode choice?
+
+hhtrip <- merge(trip, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
 
 ```
 
