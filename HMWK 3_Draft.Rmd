@@ -39,8 +39,8 @@ subset(trip[c(2,3,15,18,28:35)], HH_ID == 101113)
 ### Provide an estimate of the total number of bicycle trips represented by the survey data. Note that you should use the Person Weight to make this estimate. This number represents the total number of people each person in the survey is supposed to represent. For example, if a person’s Person Weight is 65, then that person represents 65 people in the Philadelphia region.
 
 ```{r}
-table(per$WK_MODE[per$P_WEIGHT])
-round(table(per$WK_MODE[per$P_WEIGHT])/length(per$WK_MODE[per$P_WEIGHT]),3)
+table(trip$MODE_AGG[trip$P_WEIGHT])
+round(table(trip$MODE_AGG[trip$P_WEIGHT])/length(trip$MODE_AGG[trip$P_WEIGHT]),3)
 
 ### Amount of People 
 sum(per$P_WEIGHT)
