@@ -76,6 +76,8 @@ table(trip$MODE_AGG[hh$H_COUNTY == 34005])/sum(table(trip$MODE_AGG[hh$H_COUNTY =
 
 ```{r}
 hhveh <- merge(veh, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
+year.income <- (subset( hhveh, YEAR<2025 & INCOME < 11))
+plot(subset( hhveh, YEAR<2025 & INCOME < 11, select = c(INCOME,YEAR)))
 
 ```
 
