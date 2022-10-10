@@ -14,3 +14,15 @@ trip <- read.csv("4_Trip_Public.csv")
 #Question 2
   #Creates table with tour, location, activity, and activity duration info
   subset(trip[c(2,3,15,18,28:35)], HH_ID == 101113)
+  
+#Question 3 (I think)
+#percent bikes
+table(per$WK_MODE[per$P_WEIGHT])
+round(table(per$WK_MODE[per$P_WEIGHT])/length(per$WK_MODE[per$P_WEIGHT]),3)
+
+#amount of ppl
+sum(per$P_WEIGHT)
+
+#bike (column 5: 0.003 * 5627010?)
+
+
