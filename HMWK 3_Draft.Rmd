@@ -61,6 +61,11 @@ round(summaryBy(P_WEIGHT ~ MODE_AGG , data =subset(trip,H_COUNTY == 42101),
 ### Amount of People who bike
 sum(trip$P_WEIGHT[trip$MODE_AGG=='2'],na.rm=T)*sum(trip$MODE_AGG=='2',na.rm=T)
 
+##updated #3 LMK
+round(table(trip$MODE_AGG[trip$P_WEIGHT])/length(trip$MODE_AGG[trip$P_WEIGHT]), 3)
+
+sum(trip$P_WEIGHT)*.002
+
 
 ```
 
@@ -76,6 +81,7 @@ table(trip$MODE_AGG[hh$H_COUNTY == 34005])/sum(table(trip$MODE_AGG[hh$H_COUNTY =
 
 ```{r}
 hhveh <- merge(veh, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
+library(ggplot2)
 
 ```
 
