@@ -77,6 +77,17 @@ table(trip$MODE_AGG[hh$H_COUNTY == 34005])/sum(table(trip$MODE_AGG[hh$H_COUNTY =
 ```{r}
 hhveh <- merge(veh, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
 
+ggplot(hhveh)+
+  geom_point(aes(x = INCOME, 
+                 y = YEAR))+
+  geom_abline(intercept = 0, slope = 1)+
+  labs(
+    title = "HH Vehicle Status",
+    subtitle = "",
+    caption = "",
+    x="HH Income", 
+    y="HH Vehicle Age")
+
 ```
 
 ## Question 6 
