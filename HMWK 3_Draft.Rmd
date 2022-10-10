@@ -8,6 +8,7 @@ date: "2022-10-10"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
@@ -39,8 +40,7 @@ subset(trip[c(2,3,15,18,28:35)], HH_ID == 101113)
 ### Provide an estimate of the total number of bicycle trips represented by the survey data. Note that you should use the Person Weight to make this estimate. This number represents the total number of people each person in the survey is supposed to represent. For example, if a person’s Person Weight is 65, then that person represents 65 people in the Philadelphia region.
 
 ```{r}
-table(trip$MODE_AGG[trip$P_WEIGHT])
-round(table(trip$MODE_AGG[trip$P_WEIGHT])/length(trip$MODE_AGG[trip$P_WEIGHT]),3)
+df %>% select()
 
 ### Amount of People 
 sum(per$P_WEIGHT)
@@ -48,6 +48,7 @@ sum(per$P_WEIGHT)
 ### Bikes
 (column 5: 0.003 * 5627010?)
 ```
+
 ## Question 4 
 ### Make a table that shows the mode choice for residents from the county of the household from question 1. Note that you will have to make a choice about how to group the modes together. Note also that I asked for the home county not the origin of a trip county. Look for this in the data dictionary. 
 ```{r}
@@ -56,12 +57,14 @@ sum(per$P_WEIGHT)
 
 ## Question 5 
 ### Make a graphic that shows the relationship between household income and the age of a household’s vehicle for all households. (Hint: merge the household data to the vehicle data with the merge() command. Use an internet search or type ?merge into the console to learn how to use the command.)
+
 ```{r}
 
 ```
 
 ## Question 6 
 ### Make a table or graphic that shows the relationship between household income and mode choice for all households. (The boxplot() command is a nice option, but a table is just fine.) Again, you must choose how to combine modes.
+
 ```{r}
 
 ```
@@ -69,16 +72,19 @@ sum(per$P_WEIGHT)
 ## Question 7 
 ### The last three questions reference the output of an OLS regression model predicting daily boardings at US light rail stations:
 #### a) According to the regression model, each additional job within a half mile of a station correlates with how many more daily transit riders per day?	
+
 ```{r}
 
 ```
 
 #### b) If there are an average of 1,793 boardings per station and 3,130 jobs around each station, what percentage increase in ridership does the model predict due to a doubling of the number of jobs around a station (hint: elasticity).
+
 ```{r}
 
 ```
 
 #### c) Describe the relationship between AM peak service frequency and light rail boardings.
+
 ```{r}
 
 ```
