@@ -88,11 +88,13 @@ table(trip$MODE_AGG[hh$H_COUNTY == 34005])/sum(table(trip$MODE_AGG[hh$H_COUNTY =
 #Tried bar chart, but having a "height error". Is this the right chart to show this info?
 hhveh <- merge(veh, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
 
+hhveh_fix <- filter(hhveh, INCOME < "98", YEAR < "5000")
+
 ## HEAD
 library(ggplot2)
 
 ## HEAD
-ggplot(hhveh)+
+ggplot(hhveh_fix)+
   geom_point(aes(x = INCOME, 
                  y = YEAR))+
   geom_abline(intercept = 0, slope = 1)+
