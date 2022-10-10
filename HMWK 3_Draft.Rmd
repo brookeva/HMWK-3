@@ -33,8 +33,8 @@ subset(trip[c(2,3,15,18,28:35)], HH_ID == 101113)
 ## Question 3 
 
 ```{r}
-table(per$WK_MODE[per$P_WEIGHT])
-round(table(per$WK_MODE[per$P_WEIGHT])/length(per$WK_MODE[per$P_WEIGHT]),3)
+table(trip$MODE_AGG[trip$P_WEIGHT])
+round(table(trip$MODE_AGG[trip$P_WEIGHT])/length(trip$MODE_AGG[trip$P_WEIGHT]),3)
 
 ### Amount of People 
 sum(per$P_WEIGHT)
