@@ -9,6 +9,7 @@ date: "2022-10-10"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
+library(doBy)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
@@ -42,6 +43,7 @@ subset(trip[c(2,3,15,18,28:35)], HH_ID == 101113)
 ```{r}
 trip <- merge(trip, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
 
+<<<<<<< HEAD
 table(trip$MODE_AGG[trip$H_COUNTY ==  42101]) 
 
 round(table(trip$MODE_AGG[trip$H_COUNTY == 42101])/sum(table(trip$MODE_AGG[trip$H_COUNTY == 42101])), 3)
@@ -55,11 +57,17 @@ round(summaryBy(P_WEIGHT ~ MODE_AGG , data =subset(trip, H_COUNTY == 42101),
 round(summaryBy(P_WEIGHT ~ MODE_AGG , data =subset(trip,H_COUNTY == 42101), 
                 FUN = sum) / sum(trip$P_WEIGHT[is.na(trip$MODE_AGG)==F & trip$H_COUNTY == 42101]),3) 
 
+
+### Amount of People who bike
+sum(trip$P_WEIGHT[trip$MODE_AGG=='2'],na.rm=T)*sum(trip$MODE_AGG=='2',na.rm=T)
+
+
 ```
 
 ## Question 4 
 ### Make a table that shows the mode choice for residents from the county of the household from question 1. Note that you will have to make a choice about how to group the modes together. Note also that I asked for the home county not the origin of a trip county. Look for this in the data dictionary. 
 ```{r}
+table(trip$MODE_AGG[hh$H_COUNTY == 34005])/sum(table(trip$MODE_AGG[hh$H_COUNTY == 34005]))*100
 
 ```
 
