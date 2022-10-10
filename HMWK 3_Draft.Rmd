@@ -95,15 +95,15 @@ library(ggplot2)
 
 ## HEAD
 ggplot(hhveh_fix)+
-  geom_point(aes(x = INCOME, 
-                 y = YEAR))+
+  geom_point(aes(x = YEAR, 
+                 y = INCOME))+
   geom_abline(intercept = 0, slope = 1)+
   labs(
-    title = "HH Vehicle Status",
+    title = "Household Vehicle Age as a Function of Household Income",
     subtitle = "",
     caption = "",
-    x="HH Income", 
-    y="HH Vehicle Age")
+    x="HH Vehicle Age", 
+    y="HH Income")
 
 
 year.income <- (subset( hhveh, YEAR<2025 & INCOME < 11))
@@ -119,6 +119,21 @@ plot(subset( hhveh, YEAR<2025 & INCOME < 11, select = c(INCOME,YEAR)))
 #Average household income by mode choice?
 
 hhtrip <- merge(trip, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
+hhtrip_fix <- filter(hhtrip, INCOME.x <"98")
+
+ggplot(hhtrip_fix)+
+  geom_point(aes(x = INCOME, 
+                 y = MODE_AGG))+
+  geom_abline(intercept = 0, slope = 1)+
+  labs(
+    title = "Mode Choice as a Function of Household Income",
+    subtitle = "",
+    caption = "",
+    x="HH Income", 
+    y="Mode Choice")
+
+Mode_Income <-ggplot(data=hhtrip_fix, aes(x=INCOME, y=MODE_AGG)) +
+  geom_bar(stat="MODE_AGG")
 
 ```
 
