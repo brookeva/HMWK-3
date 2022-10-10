@@ -37,43 +37,29 @@ veh <- read.csv("3_Vehicle_Public.csv")
 trip <- read.csv("4_Trip_Public.csv")
 ```
 
-=======
----
-title: "HMWK 3"
-output: html_document
-date: "2022-10-10"
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-## Load Data
+## Question 1
 ```{r}
-hh <- read.csv("1_Household_Public.csv")
-per <- read.csv("2_Person_Public.csv")
-veh <- read.csv("3_Vehicle_Public.csv")
-trip <- read.csv("4_Trip_Public.csv")
+sort(unique(hh$HH_ID))[sample(11:20, 1)]
+  #Random household = 101113
 ```
 
->>>>>>> 8810d843f0ec81393d0284308b3e6c394d833670
+## Question 2
+```{r}
+subset(trip[c(2,3,15,18,28:35)], HH_ID == 101113)
+```
+
+## Question 3 
+
+```{r}
+table(per$WK_MODE[per$P_WEIGHT])
+round(table(per$WK_MODE[per$P_WEIGHT])/length(per$WK_MODE[per$P_WEIGHT]),3)
+
+### Amount of People 
+sum(per$P_WEIGHT)
+
+### Bikes
+(column 5: 0.003 * 5627010?)
+```
+
+
+
