@@ -62,6 +62,7 @@ table(trip$MODE_AGG[hh$H_COUNTY == 34005])/sum(table(trip$MODE_AGG[hh$H_COUNTY =
 ### Make a graphic that shows the relationship between household income and the age of a household’s vehicle for all households. (Hint: merge the household data to the vehicle data with the merge() command. Use an internet search or type ?merge into the console to learn how to use the command.)
 
 ```{r}
+hhveh <- merge(veh, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
 
 ```
 
