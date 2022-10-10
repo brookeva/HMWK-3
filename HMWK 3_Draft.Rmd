@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 ---
 title: "HMWK 3"
+Names: Brooke Acosta, Emmy Park, Leah Martins-Krasner
 output: html_document
 date: "2022-10-10"
 ---
@@ -20,17 +21,22 @@ trip <- read.csv("4_Trip_Public.csv")
 ```
 
 ## Question 1
+### Draw a random household from the second ten households in your data. If your data frame is named dat, this command will do it for you: sort(unique(dat$HH_ID))[sample(11:20, 1)]
+### Write a brief description of the household. Be sure to include: their income, race, composition, county of residence, and whether they own a car.
+
 ```{r}
 sort(unique(hh$HH_ID))[sample(11:20, 1)]
   #Random household = 101113
 ```
 
 ## Question 2
+### Describe the daily activities and travel of the household’s members using the trip data.
 ```{r}
 subset(trip[c(2,3,15,18,28:35)], HH_ID == 101113)
 ```
 
-## Question 3 
+## Question 3
+### Provide an estimate of the total number of bicycle trips represented by the survey data. Note that you should use the Person Weight to make this estimate. This number represents the total number of people each person in the survey is supposed to represent. For example, if a person’s Person Weight is 65, then that person represents 65 people in the Philadelphia region.
 
 ```{r}
 table(per$WK_MODE[per$P_WEIGHT])
@@ -42,6 +48,38 @@ sum(per$P_WEIGHT)
 ### Bikes
 (column 5: 0.003 * 5627010?)
 ```
+## Question 4 
+### Make a table that shows the mode choice for residents from the county of the household from question 1. Note that you will have to make a choice about how to group the modes together. Note also that I asked for the home county not the origin of a trip county. Look for this in the data dictionary. 
+```{r}
 
+```
 
+## Question 5 
+### Make a graphic that shows the relationship between household income and the age of a household’s vehicle for all households. (Hint: merge the household data to the vehicle data with the merge() command. Use an internet search or type ?merge into the console to learn how to use the command.)
+```{r}
+
+```
+
+## Question 6 
+### Make a table or graphic that shows the relationship between household income and mode choice for all households. (The boxplot() command is a nice option, but a table is just fine.) Again, you must choose how to combine modes.
+```{r}
+
+```
+
+## Question 7 
+### The last three questions reference the output of an OLS regression model predicting daily boardings at US light rail stations:
+#### a) According to the regression model, each additional job within a half mile of a station correlates with how many more daily transit riders per day?	
+```{r}
+
+```
+
+#### b) If there are an average of 1,793 boardings per station and 3,130 jobs around each station, what percentage increase in ridership does the model predict due to a doubling of the number of jobs around a station (hint: elasticity).
+```{r}
+
+```
+
+#### c) Describe the relationship between AM peak service frequency and light rail boardings.
+```{r}
+
+```
 
