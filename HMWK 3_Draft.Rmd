@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(doBy)
 library(kableExtra)
+library(tidyverse)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
@@ -120,7 +121,7 @@ plot(subset( hhveh, YEAR<2025 & INCOME < 11, select = c(INCOME,YEAR)))
 #Average household income by mode choice?
 
 hhtrip <- merge(trip, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
-hhtrip_fix <- filter(hhtrip, INCOME.x <"98")
+hhtrip_fix <- filter(hhtrip, INCOME <"98")
 
 ggplot(hhtrip_fix)+
   geom_point(aes(x = INCOME, 
@@ -135,6 +136,12 @@ ggplot(hhtrip_fix)+
 
 hhtrip_summary <- hhtrip_fix %>% select(INCOME.x,MODE_AGG)
 
+##table & plot with hhtrip_fix
+table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG)
+
+plot(table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG))
+
+##table & plot with hhtrip
 table(hhtrip$INCOME,hhtrip$MODE_AGG)
       
 plot(table(hhtrip$INCOME,hhtrip$MODE_AGG))
