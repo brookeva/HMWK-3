@@ -122,22 +122,11 @@ plot(subset( hhveh, YEAR<2025 & INCOME < 11, select = c(INCOME,YEAR)))
 hhtrip <- merge(trip, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
 hhtrip_fix <- filter(hhtrip, INCOME.x <"98")
 
-ggplot(hhtrip_fix)+
-  geom_point(aes(x = INCOME, 
-                 y = MODE_AGG))+
-  geom_abline(intercept = 0, slope = 1)+
-  labs(
-    title = "Mode Choice as a Function of Household Income",
-    subtitle = "",
-    caption = "",
-    x="HH Income", 
-    y="Mode Choice")
-
 hhtrip_summary <- hhtrip_fix %>% select(INCOME.x,MODE_AGG)
 
-table(hhtrip$INCOME,hhtrip$MODE_AGG)
+table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG)
       
-plot(table(hhtrip$INCOME,hhtrip$MODE_AGG))
+plot(table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG))
 ```
 
 ## Question 7 
