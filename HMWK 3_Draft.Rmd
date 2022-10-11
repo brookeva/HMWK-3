@@ -106,11 +106,6 @@ ggplot(hhveh_fix)+
     x="HH Vehicle Age", 
     y="HH Income")
 
-
-year.income <- (subset( hhveh, YEAR<2025 & INCOME < 11))
-plot(subset( hhveh, YEAR<2025 & INCOME < 11, select = c(INCOME,YEAR)))
-## f91a670faab42c2b6aedc986baa03f9a50d8431c
-## 83402d1ba557781e114d9d27b8d0dbc4c6b41d5c
 ```
 
 ## Question 6 
