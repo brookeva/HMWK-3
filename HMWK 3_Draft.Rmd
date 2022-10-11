@@ -10,6 +10,7 @@ date: "2022-10-10"
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(doBy)
+library(kableExtra)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
@@ -44,7 +45,7 @@ subset(trip[c(2,3,15,18,28:35)], HH_ID == 101113)
 
 trip <- merge(trip, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
 
-<<<<<<< HEAD
+## HEAD
 table(trip$MODE_AGG[trip$H_COUNTY ==  42101]) 
 
 round(table(trip$MODE_AGG[trip$H_COUNTY == 42101])/sum(table(trip$MODE_AGG[trip$H_COUNTY == 42101])), 3)
@@ -132,8 +133,7 @@ ggplot(hhtrip_fix)+
     x="HH Income", 
     y="Mode Choice")
 
-Mode_Income <-ggplot(data=hhtrip_fix, aes(x=INCOME, y=MODE_AGG)) +
-  geom_bar(stat="MODE_AGG")
+hhtrip_summary <- hhtrip_fix %>% select(INCOME.x,MODE_AGG)
 
 ```
 
