@@ -104,6 +104,9 @@ plot(subset( hhveh, YEAR<2025 & INCOME < 11, select = c(INCOME,YEAR)))
 
 hhtrip <- merge(trip, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
 
+table(hhtrip$INCOME,hhtrip$MODE_AGG)
+      
+plot(table(hhtrip$INCOME,hhtrip$MODE_AGG))
 ```
 
 ## Question 7 
