@@ -73,7 +73,11 @@ round(table(trip$MODE_AGG[trip$P_WEIGHT])/length(trip$MODE_AGG[trip$P_WEIGHT]), 
 
 sum(trip$P_WEIGHT)*.002
 
+table(trip$MODE_AGG)/length(trip)
 
+##finalfinal
+sum(trip$P_WEIGHT[trip$MODE_AGG=='2'],na.rm=T)
+                         
 ```
 
 ## Question 4 
@@ -123,19 +127,9 @@ plot(subset( hhveh, YEAR<2025 & INCOME < 11, select = c(INCOME,YEAR)))
 hhtrip <- merge(trip, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
 hhtrip_fix <- filter(hhtrip, INCOME <"98")
 
-ggplot(hhtrip_fix)+
-  geom_point(aes(x = INCOME, 
-                 y = MODE_AGG))+
-  geom_abline(intercept = 0, slope = 1)+
-  labs(
-    title = "Mode Choice as a Function of Household Income",
-    subtitle = "",
-    caption = "",
-    x="HH Income", 
-    y="Mode Choice")
-
 hhtrip_summary <- hhtrip_fix %>% select(INCOME.x,MODE_AGG)
 
+<<<<<<< HEAD
 ##table & plot with hhtrip_fix
 table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG)
 
@@ -143,8 +137,12 @@ plot(table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG))
 
 ##table & plot with hhtrip
 table(hhtrip$INCOME,hhtrip$MODE_AGG)
-      
-plot(table(hhtrip$INCOME,hhtrip$MODE_AGG))
+=======
+table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG)
+>>>>>>> 070836072d6eca2362c88bdf8266d73a565146ef
+  
+## use rowbind or columnbind     
+plot(table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG))
 ```
 
 ## Question 7 
