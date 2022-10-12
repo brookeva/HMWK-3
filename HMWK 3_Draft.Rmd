@@ -149,6 +149,16 @@ plot(table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG))
       
 
 >>>>>>> b7503f4d3c4bdf5a1219e524eaa4871064e5c819
+
+
+
+#John's current code
+hhtrip <- merge(trip, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
+hhtrip_fix <- filter(hhtrip, INCOME <"98")
+Q6Table <- table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG)
+colnames(Q6Table) = c("Walk", "Bike", "Private Vehicle", "Private Transit", "Public Transit", "School Bus", "Other")
+rownames(Q6Table) = c("$0 to $9,999","$10,000 to $24,999","$25,000 to $34,999", "$35,000 to $49,999", "$50,000 to $74,999","$75,000 to $99,999","$100,000 to $149,999","$150,000 to $199,999 ","$200,000 to $249,999","$250,000 or more") 
+show(Q6Table)
 ```
 
 ## Question 7 
