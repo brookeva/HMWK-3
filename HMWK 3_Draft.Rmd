@@ -46,43 +46,6 @@ subset(trip[c(2,3,15,18,28:35)], HH_ID == 101113)
 
 trip <- merge(trip, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
 
-## HEAD
-table(trip$MODE_AGG[trip$H_COUNTY ==  42101]) 
-
-round(table(trip$MODE_AGG[trip$H_COUNTY == 42101])/sum(table(trip$MODE_AGG[trip$H_COUNTY == 42101])), 3)
-
-install.packages("doBy")
-library(doBy)
-
-round(summaryBy(P_WEIGHT ~ MODE_AGG , data =subset(trip, H_COUNTY == 42101), 
-                FUN = sum),3) 
-
-round(summaryBy(P_WEIGHT ~ MODE_AGG , data =subset(trip,H_COUNTY == 42101), 
-                FUN = sum) / sum(trip$P_WEIGHT[is.na(trip$MODE_AGG)==F & trip$H_COUNTY == 42101]),3) 
-
-#how do we get the people weight and bike trips to interact in a way that makes sense? Just multiplying sum of person weight of bike by number of bike trips gives >77 million
-
-### Amount of People who bike
-sum(trip$P_WEIGHT[trip$MODE_AGG=='2'],na.rm=T)
-
-### Number of bike trips
-sum(trip$MODE_AGG=='2',na.rm=T)
-
-##updated #3 LMK
-round(table(trip$MODE_AGG[trip$P_WEIGHT])/length(trip$MODE_AGG[trip$P_WEIGHT]), 3)
-
-sum(trip$P_WEIGHT)*.002
-
-<<<<<<< HEAD
-table(trip$MODE_AGG)/length(trip)
-                         
-=======
-table(trip$MODE_AGG)/length(trip$MODE_AGG)
-
-table(trip$MODE_AGG)/length(trip$MODE_AGG)*sum(trip$P_WEIGHT)
->>>>>>> b7503f4d3c4bdf5a1219e524eaa4871064e5c819
-
-##finalfinal
 sum(trip$P_WEIGHT[trip$MODE_AGG=='2'],na.rm=T)
 ```
 
