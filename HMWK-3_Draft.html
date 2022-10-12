@@ -392,7 +392,7 @@ sort(unique(dat$HH_ID))[sample(11:20, 1)]</h3>
 their income, race, composition, county of residence, and whether they
 own a car.</h3>
 <pre class="r"><code>sort(unique(hh$HH_ID))[sample(11:20, 1)]</code></pre>
-<pre><code>## [1] 101057</code></pre>
+<pre><code>## [1] 101258</code></pre>
 <pre class="r"><code>#Random household = 101113
 
 # We drew Household 101113. The household is from Burlington County and is made up of one 55 to 64 year old male living in a single family, detached house. Their race was collected with the Pilot Record and is labelled as Non-Hispanic. They make between $75,000 and $99,000.  They own 1 car and 1 bike. </code></pre>
@@ -543,7 +543,7 @@ model predict due to a doubling of the number of jobs around a station
 <div id="c-describe-the-relationship-between-am-peak-service-frequency-and-light-rail-boardings." class="section level4">
 <h4>c) Describe the relationship between AM peak service frequency and
 light rail boardings.</h4>
-<pre class="r"><code># There is a positive, linear relationship between AM peak service frequency and light rail boardings. For every increase in AM peak service frequency, boardings increase by 105.82.  The standard error is 9.887, so this increase in boarders could range from 95.33 to 115.71. </code></pre>
+<pre class="r"><code># There is a positive, linear relationship between AM peak service frequency and light rail boardings. For every increase in AM peak service frequency, boardings increase by 105.82.  The standard error is 9.887, so the 99% confidence interval for increase in boarders is [80.35, 131.29]. </code></pre>
 </div>
 </div>
 </div>

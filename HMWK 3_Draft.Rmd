@@ -40,6 +40,11 @@ sort(unique(hh$HH_ID))[sample(11:20, 1)]
 # We drew Household 101113. The household is from Burlington County and is made up of one 55 to 64 year old male living in a single family, detached house. Their race was collected with the Pilot Record and is labelled as Non-Hispanic. They make between $75,000 and $99,000.  They own 1 car and 1 bike. 
 ```
 
+
+
+
+
+
 ## Question 2
 ### Describe the daily activities and travel of the household’s members using the trip data.
 ```{r}
@@ -131,6 +136,6 @@ show(Q6Table)
 #### c) Describe the relationship between AM peak service frequency and light rail boardings.
 
 ```{r}
-# There is a positive, linear relationship between AM peak service frequency and light rail boardings. For every increase in AM peak service frequency, boardings increase by 105.82.  The standard error is 9.887, so this increase in boarders could range from 95.33 to 115.71. 
+# There is a positive, linear relationship between AM peak service frequency and light rail boardings. For every increase in AM peak service frequency, boardings increase by 105.82.  The standard error is 9.887, so the 99% confidence interval for increase in boarders is [80.35, 131.29]. 
 ```
 
