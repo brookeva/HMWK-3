@@ -1,9 +1,14 @@
-<<<<<<< HEAD
 ---
-title: "HMWK 3"
-Names: Brooke Acosta, Emmy Park, Leah Martins-Krasner
-output: html_document
-date: "2022-10-10"
+title: 'Homework #3'
+author: "Brooke Acosta, Emmy Park, Leah Martins-Krasner"
+date: "2022-10-12"
+output:
+  html_document: default
+  pdf_document: default
+code_folding: hide
+editor_options:
+  markdown:
+    wrap: 72
 ---
 
 ```{r setup, include=FALSE}
@@ -30,13 +35,23 @@ trip <- read.csv("4_Trip_Public.csv")
 
 ```{r}
 sort(unique(hh$HH_ID))[sample(11:20, 1)]
-  #Random household = 101113
+#Random household = 101113
+
+# We drew Household 101113. The household is from Burlington County and is made up of one 55 to 64 year old male living in a single family, detached house. Their race was collected with the Pilot Record and is labelled as Non-Hispanic. They make between $75,000 and $99,000.  They own 1 car and 1 bike. 
 ```
 
 ## Question 2
 ### Describe the daily activities and travel of the household’s members using the trip data.
 ```{r}
 subset(trip[c(2,3,15,18,28:35)], HH_ID == 101113)
+
+# The single householder in Household 101113 took three trips on the study day: 
+
+    # Trip 1 was done by car and had 3 stops. It started and ended at home with stops for a social visit and recreation (watch/observe movies, concert, sports         event, etc).  
+
+    # Trip 2 was done by car and had 1 stop for a social visit. It lasted 1 hr 30 mins.  
+
+    # Trip 3 was done by car and had 1 stop for online shopping for products, services, or goods.  
 ```
 
 ## Question 3
@@ -60,15 +75,13 @@ table(trip$MODE_AGG[hh$H_COUNTY == 34005])/sum(table(trip$MODE_AGG[hh$H_COUNTY =
 ### Make a graphic that shows the relationship between household income and the age of a household’s vehicle for all households. (Hint: merge the household data to the vehicle data with the merge() command. Use an internet search or type ?merge into the console to learn how to use the command.)
 
 ```{r}
-#Tried bar chart, but having a "height error". Is this the right chart to show this info?
+
 hhveh <- merge(veh, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
 
 hhveh_fix <- filter(hhveh, INCOME < "98", YEAR < "5000")
 
-## HEAD
 library(ggplot2)
 
-## HEAD
 ggplot(hhveh_fix)+
   geom_point(aes(x = YEAR, 
                  y = INCOME))+
@@ -86,39 +99,10 @@ ggplot(hhveh_fix)+
 ### Make a table or graphic that shows the relationship between household income and mode choice for all households. (The boxplot() command is a nice option, but a table is just fine.) Again, you must choose how to combine modes.
 
 ```{r}
-#Average household income by mode choice?
 
 hhtrip <- merge(trip, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
-hhtrip_fix <- filter(hhtrip, INCOME <"98")
-
-hhtrip_summary <- hhtrip_fix %>% select(INCOME,MODE_AGG)
-
-<<<<<<< HEAD
-##table & plot with hhtrip_fix
-table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG)
-<<<<<<< HEAD
-
-plot(table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG))
-
-##table & plot with hhtrip
-table(hhtrip$INCOME,hhtrip$MODE_AGG)
-=======
-table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG)
->>>>>>> 070836072d6eca2362c88bdf8266d73a565146ef
-  
-## use rowbind or columnbind     
-plot(table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG))
-=======
-      
-
->>>>>>> b7503f4d3c4bdf5a1219e524eaa4871064e5c819
-
-
-
-#John's current code
-hhtrip <- merge(trip, hh[c("HH_ID", "H_COUNTY", "INCOME")], by = "HH_ID")
-hhtrip_fix <- filter(hhtrip, INCOME <"98")
-Q6Table <- table(hhtrip_fix$INCOME,hhtrip_fix$MODE_AGG)
+hhtrip_fix <- filter(hhtrip, INCOME.x <"98")
+Q6Table <- table(hhtrip_fix$INCOME.x,hhtrip_fix$MODE_AGG)
 colnames(Q6Table) = c("Walk", "Bike", "Private Vehicle", "Private Transit", "Public Transit", "School Bus", "Other")
 rownames(Q6Table) = c("$0 to $9,999","$10,000 to $24,999","$25,000 to $34,999", "$35,000 to $49,999", "$50,000 to $74,999","$75,000 to $99,999","$100,000 to $149,999","$150,000 to $199,999 ","$200,000 to $249,999","$250,000 or more") 
 show(Q6Table)
@@ -129,18 +113,24 @@ show(Q6Table)
 #### a) According to the regression model, each additional job within a half mile of a station correlates with how many more daily transit riders per day?	
 
 ```{r}
-
+# Each additional job within a half mile of a station correlates with 0.179 increase in daily transit riders.
 ```
 
 #### b) If there are an average of 1,793 boardings per station and 3,130 jobs around each station, what percentage increase in ridership does the model predict due to a doubling of the number of jobs around a station (hint: elasticity).
 
 ```{r}
+# Increase In Jobs * Elasticity = Increase In Boarding 
 
+# 3130 * 0.179 = 560.27 increase in boardings 
+
+# 560.27 increase in boardings + 1,793 boardings = 2,353.27 Boardings 
+
+# There is a 31% increase in boardings when jobs double 
 ```
 
 #### c) Describe the relationship between AM peak service frequency and light rail boardings.
 
 ```{r}
-
+# There is a positive, linear relationship between AM peak service frequency and light rail boardings. For every increase in AM peak service frequency, boardings increase by 105.82.  The standard error is 9.887, so this increase in boarders could range from 95.33 to 115.71. 
 ```
 

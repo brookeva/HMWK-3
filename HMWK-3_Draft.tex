@@ -1,0 +1,392 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Homework \#3},
+  pdfauthor={Brooke Acosta, Emmy Park, Leah Martins-Krasner},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Homework \#3}
+\author{Brooke Acosta, Emmy Park, Leah Martins-Krasner}
+\date{2022-10-12}
+
+\begin{document}
+\maketitle
+
+Note that the \texttt{echo\ =\ FALSE} parameter was added to the code
+chunk to prevent printing of the R code that generated the plot.
+
+\hypertarget{load-data}{%
+\subsection{Load Data}\label{load-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hh }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"1\_Household\_Public.csv"}\NormalTok{)}
+\NormalTok{per }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"2\_Person\_Public.csv"}\NormalTok{)}
+\NormalTok{veh }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"3\_Vehicle\_Public.csv"}\NormalTok{)}
+\NormalTok{trip }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"4\_Trip\_Public.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-1}{%
+\subsection{Question 1}\label{question-1}}
+
+\hypertarget{draw-a-random-household-from-the-second-ten-households-in-your-data.-if-your-data-frame-is-named-dat-this-command-will-do-it-for-you-sortuniquedathh_idsample1120-1}{%
+\subsubsection{Draw a random household from the second ten households in
+your data. If your data frame is named dat, this command will do it for
+you: sort(unique(dat\$HH\_ID)){[}sample(11:20,
+1){]}}\label{draw-a-random-household-from-the-second-ten-households-in-your-data.-if-your-data-frame-is-named-dat-this-command-will-do-it-for-you-sortuniquedathh_idsample1120-1}}
+
+\hypertarget{write-a-brief-description-of-the-household.-be-sure-to-include-their-income-race-composition-county-of-residence-and-whether-they-own-a-car.}{%
+\subsubsection{Write a brief description of the household. Be sure to
+include: their income, race, composition, county of residence, and
+whether they own a
+car.}\label{write-a-brief-description-of-the-household.-be-sure-to-include-their-income-race-composition-county-of-residence-and-whether-they-own-a-car.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sort}\NormalTok{(}\FunctionTok{unique}\NormalTok{(hh}\SpecialCharTok{$}\NormalTok{HH\_ID))[}\FunctionTok{sample}\NormalTok{(}\DecValTok{11}\SpecialCharTok{:}\DecValTok{20}\NormalTok{, }\DecValTok{1}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 101096
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Random household = 101113}
+
+\CommentTok{\# We drew Household 101113. The household is from Burlington County and is made up of one 55 to 64 year old male living in a single family, detached house. Their race was collected with the Pilot Record and is labelled as Non{-}Hispanic. They make between $75,000 and $99,000.  They own 1 car and 1 bike. }
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-2}{%
+\subsection{Question 2}\label{question-2}}
+
+\hypertarget{describe-the-daily-activities-and-travel-of-the-households-members-using-the-trip-data.}{%
+\subsubsection{Describe the daily activities and travel of the
+household's members using the trip
+data.}\label{describe-the-daily-activities-and-travel-of-the-households-members-using-the-trip-data.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{subset}\NormalTok{(trip[}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{15}\NormalTok{,}\DecValTok{18}\NormalTok{,}\DecValTok{28}\SpecialCharTok{:}\DecValTok{35}\NormalTok{)], HH\_ID }\SpecialCharTok{==} \DecValTok{101113}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      HH_ID PERSON_NUM TOUR_TYPE O_LOC_TYPE ACTIV1 ACTIV2 ACTIV3 ACTIV4 ACT_DUR1
+## 153 101113          1         3          1      1     12     15      1     0:00
+## 154 101113          1         3          4     12     NA     NA     NA     1:30
+## 155 101113          1        NA          4     10     NA     NA     NA     0:00
+##     ACT_DUR2 ACT_DUR3 ACT_DUR4
+## 153                           
+## 154                           
+## 155
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# The single householder in Household 101113 took three trips on the study day: }
+
+    \CommentTok{\# Trip 1 was done by car and had 3 stops. It started and ended at home with stops for a social visit and recreation (watch/observe movies, concert, sports         event, etc).  }
+
+    \CommentTok{\# Trip 2 was done by car and had 1 stop for a social visit. It lasted 1 hr 30 mins.  }
+
+    \CommentTok{\# Trip 3 was done by car and had 1 stop for online shopping for products, services, or goods.  }
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-3}{%
+\subsection{Question 3}\label{question-3}}
+
+\hypertarget{provide-an-estimate-of-the-total-number-of-bicycle-trips-represented-by-the-survey-data.-note-that-you-should-use-the-person-weight-to-make-this-estimate.-this-number-represents-the-total-number-of-people-each-person-in-the-survey-is-supposed-to-represent.-for-example-if-a-persons-person-weight-is-65-then-that-person-represents-65-people-in-the-philadelphia-region.}{%
+\subsubsection{Provide an estimate of the total number of bicycle trips
+represented by the survey data. Note that you should use the Person
+Weight to make this estimate. This number represents the total number of
+people each person in the survey is supposed to represent. For example,
+if a person's Person Weight is 65, then that person represents 65 people
+in the Philadelphia
+region.}\label{provide-an-estimate-of-the-total-number-of-bicycle-trips-represented-by-the-survey-data.-note-that-you-should-use-the-person-weight-to-make-this-estimate.-this-number-represents-the-total-number-of-people-each-person-in-the-survey-is-supposed-to-represent.-for-example-if-a-persons-person-weight-is-65-then-that-person-represents-65-people-in-the-philadelphia-region.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{trip }\OtherTok{\textless{}{-}} \FunctionTok{merge}\NormalTok{(trip, hh[}\FunctionTok{c}\NormalTok{(}\StringTok{"HH\_ID"}\NormalTok{, }\StringTok{"H\_COUNTY"}\NormalTok{, }\StringTok{"INCOME"}\NormalTok{)], }\AttributeTok{by =} \StringTok{"HH\_ID"}\NormalTok{)}
+
+\FunctionTok{sum}\NormalTok{(trip}\SpecialCharTok{$}\NormalTok{P\_WEIGHT[trip}\SpecialCharTok{$}\NormalTok{MODE\_AGG}\SpecialCharTok{==}\StringTok{\textquotesingle{}2\textquotesingle{}}\NormalTok{],}\AttributeTok{na.rm=}\NormalTok{T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 143641.9
+\end{verbatim}
+
+\hypertarget{question-4}{%
+\subsection{Question 4}\label{question-4}}
+
+\hypertarget{make-a-table-that-shows-the-mode-choice-for-residents-from-the-county-of-the-household-from-question-1.-note-that-you-will-have-to-make-a-choice-about-how-to-group-the-modes-together.-note-also-that-i-asked-for-the-home-county-not-the-origin-of-a-trip-county.-look-for-this-in-the-data-dictionary.}{%
+\subsubsection{Make a table that shows the mode choice for residents
+from the county of the household from question 1. Note that you will
+have to make a choice about how to group the modes together. Note also
+that I asked for the home county not the origin of a trip county. Look
+for this in the data
+dictionary.}\label{make-a-table-that-shows-the-mode-choice-for-residents-from-the-county-of-the-household-from-question-1.-note-that-you-will-have-to-make-a-choice-about-how-to-group-the-modes-together.-note-also-that-i-asked-for-the-home-county-not-the-origin-of-a-trip-county.-look-for-this-in-the-data-dictionary.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(trip}\SpecialCharTok{$}\NormalTok{MODE\_AGG[hh}\SpecialCharTok{$}\NormalTok{H\_COUNTY }\SpecialCharTok{==} \DecValTok{34005}\NormalTok{])}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(}\FunctionTok{table}\NormalTok{(trip}\SpecialCharTok{$}\NormalTok{MODE\_AGG[hh}\SpecialCharTok{$}\NormalTok{H\_COUNTY }\SpecialCharTok{==} \DecValTok{34005}\NormalTok{]))}\SpecialCharTok{*}\DecValTok{100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##          1          2          3          4          5          6          7 
+## 10.7738998  0.7153696 79.9262953  0.4335573  5.0075873  2.6013440  0.5419467
+\end{verbatim}
+
+\hypertarget{question-5}{%
+\subsection{Question 5}\label{question-5}}
+
+\hypertarget{make-a-graphic-that-shows-the-relationship-between-household-income-and-the-age-of-a-households-vehicle-for-all-households.-hint-merge-the-household-data-to-the-vehicle-data-with-the-merge-command.-use-an-internet-search-or-type-merge-into-the-console-to-learn-how-to-use-the-command.}{%
+\subsubsection{Make a graphic that shows the relationship between
+household income and the age of a household's vehicle for all
+households. (Hint: merge the household data to the vehicle data with the
+merge() command. Use an internet search or type ?merge into the console
+to learn how to use the
+command.)}\label{make-a-graphic-that-shows-the-relationship-between-household-income-and-the-age-of-a-households-vehicle-for-all-households.-hint-merge-the-household-data-to-the-vehicle-data-with-the-merge-command.-use-an-internet-search-or-type-merge-into-the-console-to-learn-how-to-use-the-command.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hhveh }\OtherTok{\textless{}{-}} \FunctionTok{merge}\NormalTok{(veh, hh[}\FunctionTok{c}\NormalTok{(}\StringTok{"HH\_ID"}\NormalTok{, }\StringTok{"H\_COUNTY"}\NormalTok{, }\StringTok{"INCOME"}\NormalTok{)], }\AttributeTok{by =} \StringTok{"HH\_ID"}\NormalTok{)}
+
+\NormalTok{hhveh\_fix }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(hhveh, INCOME }\SpecialCharTok{\textless{}} \StringTok{"98"}\NormalTok{, YEAR }\SpecialCharTok{\textless{}} \StringTok{"5000"}\NormalTok{)}
+
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\FunctionTok{ggplot}\NormalTok{(hhveh\_fix)}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ YEAR, }
+                 \AttributeTok{y =}\NormalTok{ INCOME))}\SpecialCharTok{+}
+  \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{intercept =} \DecValTok{0}\NormalTok{, }\AttributeTok{slope =} \DecValTok{1}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Household Vehicle Age as a Function of Household Income"}\NormalTok{,}
+    \AttributeTok{subtitle =} \StringTok{""}\NormalTok{,}
+    \AttributeTok{caption =} \StringTok{""}\NormalTok{,}
+    \AttributeTok{x=}\StringTok{"HH Vehicle Age"}\NormalTok{, }
+    \AttributeTok{y=}\StringTok{"HH Income"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{HMWK-3_Draft_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\hypertarget{question-6}{%
+\subsection{Question 6}\label{question-6}}
+
+\hypertarget{make-a-table-or-graphic-that-shows-the-relationship-between-household-income-and-mode-choice-for-all-households.-the-boxplot-command-is-a-nice-option-but-a-table-is-just-fine.-again-you-must-choose-how-to-combine-modes.}{%
+\subsubsection{Make a table or graphic that shows the relationship
+between household income and mode choice for all households. (The
+boxplot() command is a nice option, but a table is just fine.) Again,
+you must choose how to combine
+modes.}\label{make-a-table-or-graphic-that-shows-the-relationship-between-household-income-and-mode-choice-for-all-households.-the-boxplot-command-is-a-nice-option-but-a-table-is-just-fine.-again-you-must-choose-how-to-combine-modes.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hhtrip }\OtherTok{\textless{}{-}} \FunctionTok{merge}\NormalTok{(trip, hh[}\FunctionTok{c}\NormalTok{(}\StringTok{"HH\_ID"}\NormalTok{, }\StringTok{"H\_COUNTY"}\NormalTok{, }\StringTok{"INCOME"}\NormalTok{)], }\AttributeTok{by =} \StringTok{"HH\_ID"}\NormalTok{)}
+\NormalTok{hhtrip\_fix }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(hhtrip, INCOME.x }\SpecialCharTok{\textless{}}\StringTok{"98"}\NormalTok{)}
+\NormalTok{Q6Table }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(hhtrip\_fix}\SpecialCharTok{$}\NormalTok{INCOME.x,hhtrip\_fix}\SpecialCharTok{$}\NormalTok{MODE\_AGG)}
+\FunctionTok{colnames}\NormalTok{(Q6Table) }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{"Walk"}\NormalTok{, }\StringTok{"Bike"}\NormalTok{, }\StringTok{"Private Vehicle"}\NormalTok{, }\StringTok{"Private Transit"}\NormalTok{, }\StringTok{"Public Transit"}\NormalTok{, }\StringTok{"School Bus"}\NormalTok{, }\StringTok{"Other"}\NormalTok{)}
+\FunctionTok{rownames}\NormalTok{(Q6Table) }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{"$0 to $9,999"}\NormalTok{,}\StringTok{"$10,000 to $24,999"}\NormalTok{,}\StringTok{"$25,000 to $34,999"}\NormalTok{, }\StringTok{"$35,000 to $49,999"}\NormalTok{, }\StringTok{"$50,000 to $74,999"}\NormalTok{,}\StringTok{"$75,000 to $99,999"}\NormalTok{,}\StringTok{"$100,000 to $149,999"}\NormalTok{,}\StringTok{"$150,000 to $199,999 "}\NormalTok{,}\StringTok{"$200,000 to $249,999"}\NormalTok{,}\StringTok{"$250,000 or more"}\NormalTok{) }
+\FunctionTok{show}\NormalTok{(Q6Table)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                        
+##                          Walk  Bike Private Vehicle Private Transit
+##   $0 to $9,999            350     9             512               8
+##   $10,000 to $24,999      560    34            2323              27
+##   $25,000 to $34,999      400    31            2262              17
+##   $35,000 to $49,999      620    76            4177              24
+##   $50,000 to $74,999      859    71            8038              38
+##   $75,000 to $99,999      803    98            8398              31
+##   $100,000 to $149,999   1027   116           10216              37
+##   $150,000 to $199,999    566    35            4929              21
+##   $200,000 to $249,999    308    27            2754              20
+##   $250,000 or more        260    17            1828              16
+##                        
+##                         Public Transit School Bus Other
+##   $0 to $9,999                     308          6    32
+##   $10,000 to $24,999               438         57    80
+##   $25,000 to $34,999               263         25    21
+##   $35,000 to $49,999               354        122    37
+##   $50,000 to $74,999               403        238    33
+##   $75,000 to $99,999               413        250    33
+##   $100,000 to $149,999             446        458    26
+##   $150,000 to $199,999             236        261    20
+##   $200,000 to $249,999             141        177     3
+##   $250,000 or more                  93         98    13
+\end{verbatim}
+
+\hypertarget{question-7}{%
+\subsection{Question 7}\label{question-7}}
+
+\hypertarget{the-last-three-questions-reference-the-output-of-an-ols-regression-model-predicting-daily-boardings-at-us-light-rail-stations}{%
+\subsubsection{The last three questions reference the output of an OLS
+regression model predicting daily boardings at US light rail
+stations:}\label{the-last-three-questions-reference-the-output-of-an-ols-regression-model-predicting-daily-boardings-at-us-light-rail-stations}}
+
+\hypertarget{a-according-to-the-regression-model-each-additional-job-within-a-half-mile-of-a-station-correlates-with-how-many-more-daily-transit-riders-per-day}{%
+\paragraph{a) According to the regression model, each additional job
+within a half mile of a station correlates with how many more daily
+transit riders per
+day?}\label{a-according-to-the-regression-model-each-additional-job-within-a-half-mile-of-a-station-correlates-with-how-many-more-daily-transit-riders-per-day}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Each additional job within a half mile of a station correlates with 0.179 increase in daily transit riders.}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{b-if-there-are-an-average-of-1793-boardings-per-station-and-3130-jobs-around-each-station-what-percentage-increase-in-ridership-does-the-model-predict-due-to-a-doubling-of-the-number-of-jobs-around-a-station-hint-elasticity.}{%
+\paragraph{b) If there are an average of 1,793 boardings per station and
+3,130 jobs around each station, what percentage increase in ridership
+does the model predict due to a doubling of the number of jobs around a
+station (hint:
+elasticity).}\label{b-if-there-are-an-average-of-1793-boardings-per-station-and-3130-jobs-around-each-station-what-percentage-increase-in-ridership-does-the-model-predict-due-to-a-doubling-of-the-number-of-jobs-around-a-station-hint-elasticity.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Increase In Jobs * Elasticity = Increase In Boarding }
+
+\CommentTok{\# 3130 * 0.179 = 560.27 increase in boardings }
+
+\CommentTok{\# 560.27 increase in boardings + 1,793 boardings = 2,353.27 Boardings }
+
+\CommentTok{\# There is a 31\% increase in boardings when jobs double }
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{c-describe-the-relationship-between-am-peak-service-frequency-and-light-rail-boardings.}{%
+\paragraph{c) Describe the relationship between AM peak service
+frequency and light rail
+boardings.}\label{c-describe-the-relationship-between-am-peak-service-frequency-and-light-rail-boardings.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# There is a positive, linear relationship between AM peak service frequency and light rail boardings. For every increase in AM peak service frequency, boardings increase by 105.82.  The standard error is 9.887, so this increase in boarders could range from 95.33 to 115.71. }
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}
